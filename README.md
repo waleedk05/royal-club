@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Royal Club - Luxury Automotive Website
+
+A premium, modern website for an exclusive automotive club featuring luxury vehicle showcases and membership services.
+
+## Features
+
+- **Hero Section**: Stunning full-screen hero with interactive TextPressure component
+- **Gallery**: Responsive masonry layout with GSAP animations
+- **About Section**: Professional company information with statistics
+- **Contact Form**: Functional contact form with validation
+- **Floating Navigation**: Modern pill-shaped navbar with smooth scrolling
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+
+## Tech Stack
+
+- **Framework**: Next.js 15.4.6
+- **Styling**: Tailwind CSS v4
+- **Animations**: GSAP 3.13.0
+- **UI Components**: Custom React components
+- **Typography**: Custom TextPressure component with variable fonts
+
+## Components
+
+### Core Components
+
+- `HeroSection.jsx` - Main landing section with interactive text
+- `Gallery.jsx` - Masonry grid gallery with hover effects
+- `About.jsx` - Company information and features
+- `Contact.jsx` - Contact form and business information
+- `NavBar.jsx` - Floating navigation with smooth scrolling
+- `Footer.jsx` - Site footer with links and social media
+
+### UI Components
+
+- `Masonry.js` - Advanced masonry layout with GSAP animations
+- `TextPressure.jsx` - Interactive typography component
+- `PillNav.jsx` - Navigation component
+
+## Design Features
+
+- **Color Scheme**: Dark theme with gold accents
+- **Typography**: Modern, luxury-focused fonts
+- **Animations**: Smooth GSAP-powered transitions
+- **Glass Morphism**: Modern frosted glass effects
+- **Responsive**: Works on all device sizes
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.js
+│   ├── page.js
+│   └── home/
+│       └── page.jsx
+├── components/
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Footer.jsx
+│   ├── Gallery.jsx
+│   ├── HeroSection.jsx
+│   └── NavBar.jsx
+└── ui/
+    ├── Masonry.js
+    ├── PillNav.jsx
+    └── TextPressure.jsx
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Colors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The gold color palette can be customized in `tailwind.config.js`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```javascript
+colors: {
+  gold: {
+    400: '#facc15',
+    500: '#eab308',
+    // ... more shades
+  }
+}
+```
 
-## Deploy on Vercel
+### Animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GSAP animations can be modified in the respective components for different effects.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Content
+
+Update the vehicle images in `/public/cars/` and modify the gallery items array in `Gallery.jsx`.
+
+## License
+
+This project is for demonstration purposes. Please ensure you have proper licensing for any fonts, images, or other assets used in production.
