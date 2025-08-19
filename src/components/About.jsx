@@ -10,7 +10,7 @@ export default function About() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-5xl md:text-6xl font-medium text-accent mb-4 sm:mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-medium text-accent mb-4 sm:mb-6"
             style={{fontFamily: "var(--font-vidaloka)"}}>
             About Royal Club
           </h2>
@@ -64,7 +64,7 @@ export default function About() {
           <div className="relative mt-8 lg:mt-0">
             <div className="relative bg-card rounded-2xl p-4 sm:p-8">
               <Image
-                src="/cars/car1.jpg"
+                src="/cars/car4.jpg"
                 alt="Luxury vehicle showcase"
                 width={600}
                 height={400}

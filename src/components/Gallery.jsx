@@ -1,104 +1,104 @@
 "use client";
 import React from "react";
-import Masonry from "@/ui/Masonry";
+import Image from "next/image";
 
 export default function Gallery() {
-  const items = [
+  const allItems = [
     {
       id: "1",
       img: "/cars/car1.jpg",
-      url: "https://example.com/one",
-      height: 300,
+      width: 280,
+      height: 110,
     },
     {
       id: "2",
       img: "/cars/car2.jpg",
-      url: "https://example.com/two",
-      height: 500,
+      width: 240,
+      height: 170,
     },
     {
       id: "3",
       img: "/cars/car3.jpg",
-      url: "https://example.com/three",
-      height: 250,
+      width: 280,
+      height: 105,
     },
     {
       id: "4",
       img: "/cars/car4.jpg",
-      url: "https://example.com/four",
-      height: 400,
+      width: 240,
+      height: 130,
     },
     {
       id: "5",
       img: "/cars/car5.jpg",
-      url: "https://example.com/five",
-      height: 360,
+      width: 180,
+      height: 130,
     },
     {
       id: "6",
       img: "/cars/car6.jpg",
-      url: "https://example.com/six",
-      height: 450,
+      width: 240,
+      height: 160,
     },
     {
       id: "7",
       img: "/cars/car7.jpg",
-      url: "https://example.com/seven",
-      height: 280,
+      width: 190,
+      height: 105,
     },
     {
       id: "8",
       img: "/cars/car8.jpg",
-      url: "https://example.com/eight",
-      height: 250,
+      width: 190,
+      height: 100,
     },
     {
       id: "9",
       img: "/cars/car9.png",
-      url: "https://example.com/nine",
-      height: 300,
+      width: 260,
+      height: 110,
     },
     {
       id: "10",
       img: "/cars/car10.png",
-      url: "https://example.com/ten",
-      height: 300,
+      width: 260,
+      height: 110,
     },
     {
       id: "11",
       img: "/cars/car11.png",
-      url: "https://example.com/eleven",
-      height: 300,
+      width: 270,
+      height: 120,
     },
     {
       id: "12",
       img: "/cars/car12.jpg",
-      url: "https://example.com/twelve",
-      height: 300,
+      width: 260,
+      height: 109,
     },
     {
       id: "13",
       img: "/cars/car13.jpg",
-      url: "https://example.com/thirteen",
-      height: 280,
+      width: 280,
+      height: 120,
     },
     {
       id: "14",
       img: "/cars/car14.jpg",
-      url: "https://example.com/fourteen",
-      height: 270,
+      width: 280,
+      height: 110,
     },
     {
       id: "15",
       img: "/cars/car15.png",
-      url: "https://example.com/fifteen",
-      height: 350,
+      width: 250,
+      height: 130,
     },
     {
       id: "16",
       img: "/cars/car16.jpg",
-      url: "https://example.com/sixteen",
-      height: 300,
+      width: 260,
+      height: 100,
     },
   ];
 
@@ -106,11 +106,11 @@ export default function Gallery() {
     <section
       id="gallery"
       className="bg-primary px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
-      style={{minHeight: "100vh", paddingBottom: "150px"}}>
+      style={{paddingBottom: "80px"}}>
       {/* Header Section */}
       <div className="text-center mb-12 sm:mb-16">
         <h1
-          className="text-3xl sm:text-5xl md:text-7xl font-normal text-accent mb-4 sm:mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl font-normal text-accent mb-4 sm:mb-6"
           style={{fontFamily: "var(--font-vidaloka)"}}>
           Our Collection
         </h1>
@@ -123,25 +123,48 @@ export default function Gallery() {
       </div>
 
       {/* Gallery Section */}
-      <div
-        className="max-w-7xl mx-auto overflow-hidden"
-        style={{
-          minHeight: "600px",
-          paddingBottom: "100px",
-          maxHeight: "150vh", // Constraint for mobile
-        }}>
-        <div className="relative w-full" style={{height: "auto", minHeight: "1600px"}}>
-          <Masonry
-            items={items}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={false}
-          />
+      <div className="max-w-7xl mx-auto">
+        <div className="masonry-grid">
+          {allItems.map((item) => {
+            // Calculate grid row span based on image height
+            const rowSpan = Math.ceil(item.height / 35); // 35px per row unit
+
+            return (
+              <div
+                key={item.id}
+                className="masonry-item group relative overflow-hidden rounded-lg glass-card transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{
+                  gridRowEnd: `span ${rowSpan}`,
+                  aspectRatio: `${item.width} / ${item.height}`,
+                }}>
+                <Image
+                  src={item.img}
+                  alt={`Luxury car ${item.id}`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                  <h3
+                    className="text-white font-medium text-lg"
+                    style={{fontFamily: "var(--font-vidaloka)"}}>
+                    Luxury Vehicle {item.id}
+                  </h3>
+                  <p className="text-white/80 text-sm mt-1">Premium Collection</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom text */}
+        <div className="text-center mt-12 sm:mt-16">
+          <p
+            className="text-lg sm:text-xl text-muted font-light"
+            style={{fontFamily: "var(--font-vidaloka)"}}>
+            Visit us to browse our full collection
+          </p>
         </div>
       </div>
     </section>

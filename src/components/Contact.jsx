@@ -31,7 +31,7 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-5xl md:text-6xl font-bold text-accent mb-4 sm:mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-accent mb-4 sm:mb-6"
             style={{fontFamily: "var(--font-vidaloka)"}}>
             Get In Touch
           </h2>
