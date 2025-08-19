@@ -3,19 +3,19 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-accent">ROYAL CLUB</h3>
-              <p className="text-muted mt-4 max-w-md">
+              <h3 className="text-2xl sm:text-3xl font-bold text-accent">ROYAL CLUB</h3>
+              <p className="text-muted mt-4 max-w-md text-sm sm:text-base">
                 The world's most exclusive automotive club, connecting passionate collectors and
                 enthusiasts with the finest luxury vehicles ever created.
               </p>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="#"
                 className="w-10 h-10 btn-secondary rounded-lg flex items-center justify-center transition-standard">

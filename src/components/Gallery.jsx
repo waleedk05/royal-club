@@ -105,36 +105,44 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="bg-primary px-4 py-16"
-      style={{minHeight: "100vh", paddingBottom: "200px"}}>
+      className="bg-primary px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+      style={{minHeight: "100vh", paddingBottom: "150px"}}>
       {/* Header Section */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-12 sm:mb-16">
         <h1
-          className="text-5xl md:text-7xl font-normal text-accent mb-6"
+          className="text-3xl sm:text-5xl md:text-7xl font-normal text-accent mb-4 sm:mb-6"
           style={{fontFamily: "var(--font-vidaloka)"}}>
           Our Collection
         </h1>
-        <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-muted max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
           Discover our curated selection of luxury automobiles
         </p>
-        <div className="mt-8 flex justify-center">
-          <div className="h-1 w-24 bg-accent rounded-full"></div>
+        <div className="mt-6 sm:mt-8 flex justify-center">
+          <div className="h-1 w-16 sm:w-24 bg-white rounded-full"></div>
         </div>
       </div>
 
       {/* Gallery Section */}
-      <div className="max-w-7xl mx-auto" style={{minHeight: "800px", paddingBottom: "150px"}}>
-        <Masonry
-          items={items}
-          ease="power3.out"
-          duration={0.6}
-          stagger={0.05}
-          animateFrom="random"
-          scaleOnHover={true}
-          hoverScale={0.95}
-          blurToFocus={true}
-          colorShiftOnHover={false}
-        />
+      <div
+        className="max-w-7xl mx-auto overflow-hidden"
+        style={{
+          minHeight: "600px",
+          paddingBottom: "100px",
+          maxHeight: "150vh", // Constraint for mobile
+        }}>
+        <div className="relative w-full" style={{height: "auto", minHeight: "1600px"}}>
+          <Masonry
+            items={items}
+            ease="power3.out"
+            duration={0.6}
+            stagger={0.05}
+            animateFrom="bottom"
+            scaleOnHover={true}
+            hoverScale={0.95}
+            blurToFocus={true}
+            colorShiftOnHover={false}
+          />
+        </div>
       </div>
     </section>
   );

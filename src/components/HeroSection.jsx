@@ -12,9 +12,9 @@ export default function HeroSection() {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-card"></div>
 
-      {/* Text overlay w-full max-w-6xl */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <div className="w-full max-w-6xl" style={{height: "300px"}}>
+      {/* Text overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-6xl" style={{height: "200px"}}>
           <TextPressure
             text="ROYAL CLUB"
             flex={true}
@@ -25,11 +25,11 @@ export default function HeroSection() {
             italic={true}
             textColor="#ffffff"
             strokeColor="#ff0000"
-            minFontSize={36}
+            minFontSize={24}
           />
         </div>
-        <div className="mt-8">
-          <p className="text-xl md:text-2xl text-secondary max-w-2xl leading-relaxed drop-shadow-lg font-light tracking-wide">
+        <div className="mt-6 sm:mt-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-secondary max-w-2xl leading-relaxed drop-shadow-lg font-light tracking-wide px-4 sm:px-0">
             Experience luxury, elegance, and timeless automotive excellence
           </p>
         </div>

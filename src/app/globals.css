@@ -137,4 +137,42 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .text-pressure-title {
+    font-size: clamp(1.5rem, 8vw, 4rem) !important;
+  }
+
+  /* Masonry mobile fixes */
+  #gallery .max-w-7xl {
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  #gallery .max-w-7xl > div {
+    max-height: 190vh !important;
+    overflow: hidden;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Additional masonry constraints */
+  #gallery {
+    overflow-x: hidden;
+  }
 }
