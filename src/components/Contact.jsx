@@ -1,5 +1,6 @@
 "use client";
 import React, {useState} from "react";
+import SpotlightCard from "@/ui/SpotlightCard";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,11 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-accent mb-6">Get In Touch</h2>
+          <h2
+            className="text-5xl md:text-6xl font-bold text-accent mb-6"
+            style={{fontFamily: "var(--font-vidaloka)"}}>
+            Get In Touch
+          </h2>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
             Ready to join the most exclusive automotive community? Contact our membership team.
           </p>
